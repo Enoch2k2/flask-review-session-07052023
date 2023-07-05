@@ -21,10 +21,12 @@ class Home(Resource):
 api.add_resource(Home, "/", endpoint='home')
 
 
-class Blog(Resource):
+class BlogRoutes(Resource):
     def get(self):
         return {'message': 'return json here that displays all the blogs, but also includes the blogs comments, each comment should also include the user'}, 200
 
+
+api.add_resource(BlogRoutes, endpoint="blogs")
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
